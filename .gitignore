@@ -1,0 +1,15 @@
+*.csproj
+*.sln
+.DS_Store
+.idea
+cmake-*/
+
+/builds/*
+/images/*
+/Shot-*.png
+
+/project/**/Library/*
+/project/**/Logs/*
+/project/**/Temp/*
+/project/**/UserSettings/*
+/project/**/obj/*

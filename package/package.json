@@ -1,0 +1,22 @@
+{
+  "author": "Cao Yasong",
+  "dependencies": {},
+  "description": "MMN Plugin for Unity",
+  "displayName": "MNN Plugin",
+  "keywords": [
+    "unity"
+  ],
+  "license": "MIT",
+  "name": "com.caoyasong.mnn-plugin",
+  "repository": "git@github.com:zhaosiwen1949/MNN-Unity-Plugin.git",
+  "unity": "6000.0",
+  "unityRelease": "28f1",
+  "version": "0.0.1",
+  "samples": [
+    {
+      "displayName": "",
+      "description": "",
+      "path": "Samples~/xxx"
+    }
+  ]
+}
