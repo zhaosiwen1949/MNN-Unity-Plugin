@@ -1,8 +1,7 @@
 {
   "author": "Cao Yasong",
-  "dependencies": {},
   "description": "MMN Plugin for Unity",
-  "displayName": "MNN Plugin",
+  "displayName": "MNNPlugin",
   "keywords": [
     "unity"
   ],

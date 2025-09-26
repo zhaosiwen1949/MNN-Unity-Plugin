@@ -1,4 +1,4 @@
-﻿#include "library.h"
+﻿#include "include/mnn_plugin.h"
 
 #include <string>
 
@@ -16,7 +16,7 @@ extern "C" {
     }
 
     // 接收 C 字符串并返回新字符串（注意：内存管理需与调用侧协商）
-    EXPORT_API const char* EchoString(const char* input) {
+    EXPORT_API const char* EchoString_Internal(const char* input) {
         static std::string buffer;
         buffer = std::string("Echo: ") + input;
         return buffer.c_str();

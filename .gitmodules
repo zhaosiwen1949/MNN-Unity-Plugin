@@ -1,0 +1,3 @@
+[submodule "src/submodules/MNN"]
+	path = src/submodules/MNN
+	url = https://github.com/alibaba/MNN.git

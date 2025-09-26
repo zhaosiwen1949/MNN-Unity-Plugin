@@ -13,3 +13,7 @@ cmake-*/
 /project/**/Temp/*
 /project/**/UserSettings/*
 /project/**/obj/*
+
+/src/models/*
+/src/third_party/MNN/lib/*
+/package/Plugins/*

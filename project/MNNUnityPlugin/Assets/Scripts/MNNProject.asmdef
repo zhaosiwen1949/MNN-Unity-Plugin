@@ -1,0 +1,16 @@
+{
+    "name": "MNNProject",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7c521b5de4f10b34fbf43a5ea167ba5d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
