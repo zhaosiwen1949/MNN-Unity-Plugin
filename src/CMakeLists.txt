@@ -34,6 +34,11 @@ set_target_properties(mnn_lib PROPERTIES
         IMPORTED_IMPLIB  "${LIB_PATH}/MNN.lib"
 )
 
+# 增加栈大小
+if(WIN32)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /STACK:8388608")
+    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /STACK:8388608")
+endif()
 
 add_library(mnn_plugin SHARED mnn_plugin.cpp)
 
@@ -43,18 +48,18 @@ target_include_directories(mnn_plugin
 )
 
 target_link_libraries(mnn_plugin
-        PRIVATE mnn_lib
+        PUBLIC mnn_lib
 )
 
 add_executable(mnn_test mnn_test.cpp)
 
-target_include_directories(mnn_test
-        PUBLIC
-        ${CMAKE_SOURCE_DIR}/include
-)
+#target_include_directories(mnn_test
+#        PUBLIC
+#        ${CMAKE_SOURCE_DIR}/include
+#)
 
 target_link_libraries(mnn_test
-        PRIVATE mnn_lib
+        PRIVATE mnn_plugin
 )
 
 # Windows平台特定：复制DLL到输出目录

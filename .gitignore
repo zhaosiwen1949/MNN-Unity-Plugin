@@ -3,6 +3,7 @@
 .DS_Store
 .idea
 cmake-*/
+downloaded_file
 
 /builds/*
 /images/*

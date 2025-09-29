@@ -1,6 +1,17 @@
-﻿#ifndef SRC_LIBRARY_H
-#define SRC_LIBRARY_H
+﻿#ifndef MNN_PLUGIN_H
+#define MNN_PLUGIN_H
 
-void hello();
+#ifdef _WIN32
+  #define EXPORT_API __declspec(dllexport)
+#else
+  #define EXPORT_API
+#endif
 
-#endif //SRC_LIBRARY_H
+// 定义回调函数类型
+typedef void (*CallbackFunction)(const char* message);
+
+extern "C" {
+  EXPORT_API void LLMInit(CallbackFunction callback);
+}
+
+#endif //MNN_PLUGIN_H

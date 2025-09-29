@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using AOT;
 using UnityEngine;
 using MNNPlugin.Runtime;
@@ -22,7 +24,23 @@ public class TestNativePlugin : MonoBehaviour
         callbackDelegate = new NativePlugin.StringCallbackDelegate(OnStringReceived);
         
         // 调用process函数，传入回调
-        NativePlugin.LLMInit(callbackDelegate);
+        // NativePlugin.LLMInit(callbackDelegate);
+        
+        // 创建具有 8MB 栈大小的新线程
+        Thread thread = new Thread(() => 
+        {
+            try 
+            {
+                NativePlugin.LLMInit(callbackDelegate); // 在新线程中调用 C++ 函数
+            }
+            catch (Exception e) 
+            {
+                Debug.LogError("Native call failed: " + e.Message);
+            }
+        }, 8 * 1024 * 1024); // 8MB 栈空间
+        
+        thread.Start();
+        thread.Join(); // 等待线程完成
     }
 
     // Update is called once per frame

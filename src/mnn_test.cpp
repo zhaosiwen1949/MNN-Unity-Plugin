@@ -5,6 +5,7 @@
 //  ZhaodeWang
 //
 
+#include "mnn_plugin.h"
 #include "llm/llm.hpp"
 #define MNN_OPEN_TIME_TRACE
 #include <MNN/AutoTime.hpp>
@@ -241,7 +242,7 @@ void chat(Llm* llm) {
         messages.emplace_back("assistant", assistant_str);
     }
 }
-int main(int argc, const char* argv[]) {
+int main_llm(int argc, const char* argv[]) {
     if (argc < 2) {
         std::cout << "Usage: " << argv[0] << " config.json <prompt.txt>" << std::endl;
         return 0;
@@ -287,4 +288,13 @@ int main(int argc, const char* argv[]) {
         "async":false
     })");
     return eval(llm.get(), prompt_file, max_token_number);
+}
+
+int main(int argc, const char* argv[])
+{
+    LLMInit([](const char* message)
+    {
+        std::cout << message << std::endl;
+    });
+    return 0;
 }
